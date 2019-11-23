@@ -19,7 +19,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-
+	fmt.Println("listen tcp:6001")
 	rpc.Register(new(App))
 
 	for {
@@ -27,6 +27,7 @@ func main() {
 		if err != nil {
 			continue
 		}
+		fmt.Println("accept connection from", conn.RemoteAddr().String())
 		go rpc.ServeCodec(goridge.NewCodec(conn))
 	}
 }
