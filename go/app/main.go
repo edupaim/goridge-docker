@@ -22,7 +22,7 @@ func (s *App) SumArray(array string, r *string) error {
 	for i, value := range arrayStruct {
 		sum += value
 		returnString += strconv.Itoa(value)
-		if i != len(arrayStruct)-1 {
+		if i+1 != len(arrayStruct) {
 			returnString += "+"
 		}
 	}
