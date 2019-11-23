@@ -6,6 +6,7 @@ import (
 	"github.com/spiral/goridge"
 	"net"
 	"net/rpc"
+	"strconv"
 )
 
 type App struct{}
@@ -17,10 +18,15 @@ func (s *App) SumArray(array string, r *string) error {
 		return err
 	}
 	sum := 0
-	for _, value := range arrayStruct {
+	returnString := ""
+	for i, value := range arrayStruct {
 		sum += value
+		returnString += strconv.Itoa(value)
+		if i != len(arrayStruct)-1 {
+			returnString += "+"
+		}
 	}
-	*r = fmt.Sprintf("= %d\n", sum)
+	*r = fmt.Sprintf(returnString+"=%d\n", sum)
 	return nil
 }
 
