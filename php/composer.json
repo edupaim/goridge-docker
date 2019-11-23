@@ -1,0 +1,12 @@
+{
+    "name": "root/main",
+    "authors": [
+        {
+            "name": "Eduardo",
+            "email": "eduardos@ntopus.com.br"
+        }
+    ],
+    "require": {
+        "spiral/goridge": "^2.1"
+    }
+}

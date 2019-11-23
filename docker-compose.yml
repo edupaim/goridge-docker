@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  php:
+    build: ./php
+    networks:
+      - int
+
+  go:
+    build: ./go
+    networks:
+      - int
+
+networks:
+  int:
