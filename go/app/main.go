@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"github.com/spiral/goridge"
 	"net"
@@ -9,8 +10,17 @@ import (
 
 type App struct{}
 
-func (s *App) Hi(name string, r *string) error {
-	*r = fmt.Sprintf("Hello, %s!", name)
+func (s *App) SumArray(array string, r *string) error {
+	var arrayStruct []int
+	err := json.Unmarshal([]byte(array), &arrayStruct)
+	if err != nil {
+		return err
+	}
+	sum := 0
+	for _, value := range arrayStruct {
+		sum += value
+	}
+	*r = fmt.Sprintf("= %d\n", sum)
 	return nil
 }
 

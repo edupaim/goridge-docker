@@ -1,8 +1,7 @@
 FROM golang:1.13
 
 WORKDIR /app
-COPY main.go ./
-COPY go.mod ./
+COPY app ./
 RUN go mod tidy
 RUN CGO_ENABLED=0 go build
 

@@ -1,2 +1,4 @@
+github.com/pkg/errors v0.8.1 h1:iURUrRGxPUNPdy5/HRSm+Yj6okJ6UtLINN0Q9M4+h3I=
 github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
+github.com/spiral/goridge v2.1.4+incompatible h1:L15TKrbPEp/G6JfS3jjuvY6whkhfD292XX+1iy9mO2k=
 github.com/spiral/goridge v2.1.4+incompatible/go.mod h1:prfLTN9qOpQxO6dtfCMJZ+uguUdCxb/ntS8ML/s5U2U=
