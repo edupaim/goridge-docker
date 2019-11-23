@@ -5,7 +5,10 @@ COPY main.go ./
 COPY go.mod ./
 RUN go mod tidy
 RUN CGO_ENABLED=0 go build
-RUN chmod +x /app/go
 
-EXPOSE 6001/tcp 
-ENTRYPOINT ["/app/go"]
+FROM alpine:latest
+WORKDIR /app
+COPY --from=0 /app/go .
+RUN chmod +x /app/go
+EXPOSE 6001/tcp
+CMD ["./go"]
