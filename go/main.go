@@ -20,8 +20,10 @@ func main() {
 		panic(err)
 	}
 	fmt.Println("listen tcp:6001")
-	rpc.Register(new(App))
-
+	err = rpc.Register(new(App))
+	if err != nil {
+		panic(err)
+	}
 	for {
 		conn, err := ln.Accept()
 		if err != nil {
